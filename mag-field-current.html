@@ -11,15 +11,15 @@
     renderer="logarithmicDepthBuffer: true; colorManagement: true;"
     loading-screen="dotsColor: white; backgroundColor: black">
 
-    <a-sphere position="0 2 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
-      event-set__up="_event: mouseup; scale: 1 1 1" event-set__leave="_event: mouseleave; scale: 1 1 1"></a-sphere>
+      <a-sphere position="0 2 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+        animation="property: position; from: '0 0 0'; to: '0 4 0'; 
+        dur: 10000; loop: true; easing: linear; 
+        autoplay: true;" 
+        event-set__up="_event: mouseup; scale: 1 1 1"
+        event-set__leave="_event: mouseleave; scale: 1 1 1">
+      </a-sphere>
 
-    <a-cylinder position="0 2 0" radius="0.3" height="4" color="grey" opacity=".5"
-      event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
-      event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
-      <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="false"
-        position="0 -0.55 0.55" geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
-    </a-cylinder>
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="grey" opacity=".5"></a-cylinder>
 
 
     <a-marker-camera preset="kanji"></a-marker-camera>
