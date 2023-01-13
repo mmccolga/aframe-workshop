@@ -19,6 +19,12 @@
         event-set__leave="_event: mouseleave; scale: 1 1 1">
       </a-sphere>
 
+      <a-sphere position="0 2 0" radius=".2" color="green" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+        animation="property: position; from: '0 0 0'; to: '0 4 0'; 
+        dur: 1000; loop: true; easing: linear; 
+        autoplay: true;" >
+      </a-sphere>
+
     <a-cylinder position="0 2 0" radius="0.3" height="4" color="grey" opacity=".5"></a-cylinder>
 
 
