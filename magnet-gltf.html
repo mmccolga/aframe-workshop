@@ -21,12 +21,12 @@ src="https://unpkg.com/ar.js@1.7.1/aframe/build/aframe-ar.min.js"></script>
          ></a-asset-item>
       </a-assets>
 
-      <a-entity position="0 1 0" scale="0.3 0.3 0.3"
+      <a-entity position="0 1 0" scale="0.25 0.25 0.25"
         material=shader: flat; color: yellow" 
         gltf-model="#magfield" 
         animation="property: rotation; from: '0 0 0'; to: '0 360 0'; 
         dur: 10000; loop: true; easing: linear; 
-        autoplay: true;"></a-entity>
+        autoplay: false;"></a-entity>
 
       <a-marker-camera preset="kanji"></a-marker-camera>
     </a-scene>
