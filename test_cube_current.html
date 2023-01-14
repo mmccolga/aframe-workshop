@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/ar.js@1.7.1/aframe/build/aframe-ar.min.js"></script>
+    <script src="dist/aframe-arcube.min.js"></script>
+    <script>
+      THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+  </head>
+  <body>
+    <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono;' vr-mode-ui="enabled: false">
+        <a-arcube>
+            <a-sphere id="blueBall" position="0 0 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+          animation="property: position; from: '0 0 0'; to: '0 4 0'; delay: 0;
+          dur: 1000; loop: true; easing: linear; 
+          autoplay: true;" 
+          event-set__up="_event: mouseup; scale: 1 1 1"
+          event-set__leave="_event: mouseleave; scale: 1 1 1">
+        </a-sphere>
+
+        <a-sphere id="blueBall" position="0 0 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+          animation="property: position; from: '0 0 0'; to: '0 4 0'; delay: 200; 
+          dur: 1000; loop: true; easing: linear; 
+          autoplay: true;" >
+        </a-sphere>
+
+        <a-sphere id="blueBall" position="0 0 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+          animation="property: position; from: '0 0 0'; to: '0 4 0'; delay: 400; 
+          dur: 1000; loop: true; easing: linear; 
+          autoplay: true;" >
+        </a-sphere>
+
+        <a-sphere id="blueBall" position="0 0 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+          animation="property: position; from: '0 0 0'; to: '0 4 0'; delay: 600; 
+          dur: 1000; loop: true; easing: linear; 
+          autoplay: true;" >
+        </a-sphere>
+
+        <a-sphere id="blueBall" position="0 0 0" radius=".2" color="blue" event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+          animation="property: position; from: '0 0 0'; to: '0 4 0'; delay: 800; 
+          dur: 1000; loop: true; easing: linear; 
+          autoplay: true;" >
+        </a-sphere>
+
+
+      <a-cylinder position="0 2 0" radius="0.3" height="4" color="grey" opacity=".5"></a-cylinder>
+
+      <a-assets>
+        <image id="2DRepBfieldWire" src="2DRepBfieldWire.png"></image>
+      </a-assets>
+
+      <a-plane material = "src: #2DRepBfieldWire" position="0 2 0" rotation="0 0 0" width="2" height="4"
+                ></a-plane>
+        </a-arcube>
+        <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
