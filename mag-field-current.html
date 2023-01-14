@@ -45,6 +45,11 @@
 
 
     <a-cylinder position="0 2 0" radius="0.3" height="4" color="grey" opacity=".5"></a-cylinder>
+    
+    <a-assets>
+        <image id="2DRepMagFieldCurrent-front" src="2DRepMagFieldCurrent-front.jpg"></image>
+    </a-assets>
+
     <a-asset-item
           id="magfield"
           src="MagneticFieldAroundWire.gltf"
@@ -70,7 +75,9 @@
          '0 360 0'; dur: 10000; loop: true; easing: linear; autoplay: 
          false;" color="yellow"></a-entity>
 
-
+    <a-image src="#2DRepMagFieldCurrent-front" position="0 2 0" scale="0.3 0.3 0.3" 
+         ></a-image>
+         
     <a-marker-camera preset="kanji"></a-marker-camera>
   </a-scene>
 </body>
