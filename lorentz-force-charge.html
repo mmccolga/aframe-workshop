@@ -1,0 +1,39 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/ar.js@1.7.1/aframe/build/aframe-ar.min.js"></script>
+    <script src="dist/aframe-arcube.min.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+</head>
+
+<body>
+    <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono;'
+        vr-mode-ui="enabled: false">
+        <a-asset-item id="lorentz" src="gltfs/LorentzForceCharge.gltf"></a-asset-item>
+        
+        <a-assets>
+            <image id="side" src="imgs/SideDiagramWireOutOfPage.png"></image>
+            <image id="front" src="imgs/2PositiveMagneticFieldDiagram.jpg"></image>
+        </a-assets>
+    
+        <a-arcube>
+
+            <a-plane material="src: #side" position="0 2 0" rotation="0 0 0" width="2" height="4"></a-plane>
+            <a-plane material="src: #front" position="0.5 2 0" rotation="0 90 0" width="2" height="4"></a-plane>
+            <a-entity position="0 1 0" scale="0.25 0.25 0.25" gltf-model="#lorentz"
+                animation="property: rotation; from: '0 0 0'; to: '0 360 0'; 
+                dur: 10000; loop: true; easing: linear; 
+                autoplay: false;"></a-entity>
+            
+            
+        </a-arcube>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
