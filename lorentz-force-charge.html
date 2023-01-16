@@ -13,8 +13,8 @@
 <body>
     <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono;'
         vr-mode-ui="enabled: false">
-        <a-asset-item id="lorentz" src="gltfs/LorentzForceCharge.gltf"></a-asset-item>
-        <a-asset-item id="bfield" src="gltfs/BFieldArray.gltf"></a-asset-item>
+        <a-asset-item id="lorentz" src="gltfs/LorentzChargeArrows.gltf"></a-asset-item>
+        <a-asset-item id="arrow" src="gltfs/arrow.gltf"></a-asset-item>
         
         <a-assets>
             <image id="side" src="imgs/SideDiagramWireOutOfPage.png"></image>
@@ -31,10 +31,12 @@
                 dur: 10000; loop: true; easing: linear; 
                 autoplay: false;"></a-entity>
             
-            <a-entity position="0 1 0" scale="0.1 0.1 0.1" gltf-model="#bfield"
-                animation="property: rotation; from: '0 0 0'; to: '0 360 0'; 
-                dur: 10000; loop: true; easing: linear; 
-                autoplay: false;"></a-entity>
+            <script>
+                for(var i=0;i<9;i++){
+                    <a-entity position="0 i 0"  gltf-model="#arrow"></a-entity>
+                }
+            
+            </script>
             
             
         </a-arcube>
